@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color:#001f3f;
+    color:#0074D9;
+}
+#menu-bar{
+    width:100%;
+    height:10%;
+    margin-bottom: 1%;
+    
+}
+.underline-menu{
+    width:80%;
+}
+.main-site-title-text{
+    margin:1%;
+    font-size: 200%;
+    padding-left: 3%;
+    padding-top: 4%;
+}
+#content-box-left{
+    width:45%;
+    height:50%;
+    float:left;
+    border:1px solid white;
+    margin:2%;
+}
+#content-box-right{
+    width:45%;
+    height:50%;
+    float:right;
+    border:1px solid white;
+    margin:2%;
+}
+#nav-bar{
+    width:65%;
+    float:right;
+    text-align: right;
+    padding:2%;
+}
+#title-bar{
+    display: inline-block;
+    width:30%;
+    
+}
+.menu-buttons{
+    display: inline;
+    font-size: 140%;
+    padding: 3% 5%;
+    margin:1%;
+}
+#game-content{
+    width: 84%;
+    height:20%;
+    border:1px solid white;
+    margin:2% auto;
+}
+.info-boxes{
+    font-size: 140%;
+    text-align: center;
+}
+.player-stats-options{
+    font-size: 150%;
+    padding-left: 3%;
+}
+#colors-choose{
+    width:100%;
+    text-align: center;
+}
+.color-select-red{
+    background-color: #FF4136;
+    font-size: 200%;
+    width:25%;
+    height: 15%;
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    margin:2%;
+}
+.color-select-green{
+    background-color: #2ECC40;
+    font-size: 200%;
+    width:25%;
+    height: 15%;
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    margin:2%;
+}
+.color-select-black{
+    background-color: #111111;
+    font-size: 200%;
+    width:25%;
+    height: 15%;
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    margin:2%;
+}
+.apply-your-choice{
+    margin:3%;
+    width:10%;
+    height:10%;
+    border-radius: 10px;
+    border:3px solid white;
+    background-color: #111111;
+    color:white;
+    transition: 1s;
+}
+.apply-your-choice:hover{
+    cursor: pointer;
+    margin:3%;
+    width:10%;
+    height:10%;
+    border-radius: 10px;
+    border:3px solid black;
+    background-color: white;
+    color:#111111;
+    transition: 1s;
+}

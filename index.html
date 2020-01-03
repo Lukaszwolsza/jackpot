@@ -1,8 +1,38 @@
 <html>
 <head>
     <title>Jackpot</title>
-    <link rel = "stylesheet" type = "text/css" href = "assecs/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "assecs/style/style.css">
+    <link rel="shortcut icon" type="image/png" href="assecs/img/favicon-machine.png"/>
 </head>
 <body>
+    <div id = "menu-bar">
+        <div id = "title-bar">
+            <h2 class = "main-site-title-text">JackLuasPot</h2>
+        </div>
+        <div id = "nav-bar">
+            <h3 class = "menu-buttons">Add funds</h3>
+            <h3 class = "menu-buttons">Withdraw</h3>
+            <h3 class = "menu-buttons">Register</h3>
+            <h3 class = "menu-buttons">Log in</h3>
+        </div>
+    </div>
+    <hr class = "underline-menu">
+    <div id = "game-content">
+        <h4 class = "info-boxes">Next round in xx.xx.xx</h4>
+    </div>
+    <div id = "content-box-left">
+        <h4 class = "info-boxes">Your stats</h4>
+        <h5 class = "player-stats-options">Current balance : <span id = "currentBalance">0</span></h5>
+        <h5 class = "player-stats-options">Your wins : <span id = "valueOfWins">0</span></h5>
+            <div id = "colors-choose">
+                <input class = "color-select-red" placeholder="x2">
+                <input class = "color-select-green" placeholder="x14">
+                <input class = "color-select-black" placeholder="x2"><br>
+                <button type="button" class = "apply-your-choice">Send coins ( ͡° ͜ʖ ͡°)</button>
+            </div>
+    </div>
+    <div id = "content-box-right">
+        <h4 class = "info-boxes">Logs of movement</h4>
+    </div>  
 </body>
 </html>
