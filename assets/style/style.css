@@ -55,14 +55,13 @@ body{
 }
 #game-content{
     width: 84%;
-    height:25%;
+    height:30%;
     border:1px solid white;
     margin:2% auto;
 }
 .timer-status-bar{
     font-size: 140%;
     text-align: center;
-    border:1px solid white;
     padding:0.5% 0;
 }
 .info-boxes{
@@ -134,8 +133,8 @@ body{
     font-size: 130%;
 }
 .color-box{
-    height:60px;
-    width:60px;
+    height:50px;
+    width:50px;
     border:1px solid white;
     margin:0 auto;
     display:inline-block;

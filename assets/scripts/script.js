@@ -9,52 +9,59 @@ let colorWinner = document.getElementById("color-winner");
 let secondTimer = document.getElementById("seconds");
 let colorBox = document.getElementById("color-box");
 
-let counter = 0;
+let counter = 1;
 
-function settingColorOfBox(color){
+// function settingColorOfBox(color){
     
-    for(let i = counter; i <= 20; i++){
-        if(color === "red"){
-            document.getElementById("color-box"+i).style.backgroundColor = "red";
-        } else if ( color === "black"){
-            document.getElementById("color-box"+i).style.backgroundColor = "black";
-        } else if ( color === "green"){
-            document.getElementById("color-box"+i).style.backgroundColor = "green";
-        }
-    }
-    counter++;
-}
+//     for(let i = counter; i <= 20; i++){
+//         if(color === "red"){
+//             document.getElementById("color-box"+i).style.backgroundColor = "red";
+//         } else if ( color === "black"){
+//             document.getElementById("color-box"+i).style.backgroundColor = "black";
+//         } else if ( color === "green"){
+//             document.getElementById("color-box"+i).style.backgroundColor = "green";
+//         }
+//     }
+//     counter++;
+// }
 
 //======================RANDOM NUMBERS===========================//
 function randomColorWinner(){
     let resultOfRandom = Math.floor((Math.random() * 100) + 1);
-        counter++;
+    if(counter === 0){
+        counter = 0;
+        for(let i = 1; i < 18; i++){
+            document.getElementById("color-box"+i).style.backgroundColor = transparent;
+        }
+    } else {
         if(resultOfRandom > 0 && resultOfRandom < 49){
             colorWinner.style.color = "red";
             colorWinner.textContent = "red";    
-            settingColorOfBox("red");
+            document.getElementById("color-box"+counter).style.backgroundColor = "red";
         } else if (resultOfRandom > 50 && resultOfRandom <= 100){
             colorWinner.style.color = "black";
             colorWinner.textContent = "black"; 
-            settingColorOfBox("black");
+            document.getElementById("color-box"+counter).style.backgroundColor = "black";
         } else if (resultOfRandom === 49){
             colorWinner.style.color = "green";
             colorWinner.textContent = "green"; 
-            settingColorOfBox("green");
+            document.getElementById("color-box"+counter).style.backgroundColor = "green";
         }     
         
+    }  
+    counter++; 
+    
 }
 //==============================================================//
 
-let seconds = 3;
+let seconds = 1;
 let timerToNewGame;
 function timerToStartGame(){
-    if(seconds > 0)
-    {
+    if(seconds > 0){
         seconds--;
         secondTimer.innerHTML = seconds;     
     }else {
-        seconds = 3;
+        seconds = 1;
         randomColorWinner();
     }  
 }
