@@ -24,14 +24,14 @@ body{
 }
 #content-box-left{
     width:45%;
-    height:50%;
+    height:60%;
     float:left;
     border:1px solid white;
     margin:2%;
 }
 #content-box-right{
     width:45%;
-    height:50%;
+    height:60%;
     float:right;
     border:1px solid white;
     margin:2%;
@@ -71,7 +71,7 @@ body{
     width:100%;
     text-align: center;
 }
-.color-select-red{
+#color-select-red{
     background-color: #FF4136;
     font-size: 200%;
     width:25%;
@@ -81,7 +81,7 @@ body{
     color:white;
     margin:2%;
 }
-.color-select-green{
+#color-select-green{
     background-color: #2ECC40;
     font-size: 200%;
     width:25%;
@@ -91,7 +91,7 @@ body{
     color:white;
     margin:2%;
 }
-.color-select-black{
+#color-select-black{
     background-color: #111111;
     font-size: 200%;
     width:25%;
@@ -101,8 +101,8 @@ body{
     color:white;
     margin:2%;
 }
-.apply-your-choice{
-    margin:3%;
+#apply-your-choice{
+    margin:4% 0;
     width:10%;
     height:10%;
     border-radius: 10px;
@@ -110,8 +110,9 @@ body{
     background-color: #111111;
     color:white;
     transition: 1s;
+    padding:1%;
 }
-.apply-your-choice:hover{
+#apply-your-choice:hover{
     cursor: pointer;
     margin:3%;
     width:10%;
@@ -121,4 +122,8 @@ body{
     background-color: white;
     color:#111111;
     transition: 1s;
+}
+.winner-info{
+    text-align: center;
+    font-size: 130%;
 }
