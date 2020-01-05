@@ -15,7 +15,14 @@ let timerToNewGame;
 
 //======================RANDOM NUMBERS===========================//
 function randomColorWinner(){
-    let resultOfRandom = Math.floor((Math.random() * 100) + 1);
+    if(counter === 18){
+        for(let i = 2; i < 18; i++){
+            document.getElementById("color-box"+i).style.backgroundColor = "transparent";
+        }
+        counter = 1;
+    }
+    console.log(counter);
+      let resultOfRandom = Math.floor((Math.random() * 100) + 1);
         if(resultOfRandom > 0 && resultOfRandom < 49){
             colorWinner.style.color = "red";
             colorWinner.textContent = "red";    
@@ -28,23 +35,19 @@ function randomColorWinner(){
             colorWinner.style.color = "green";
             colorWinner.textContent = "green"; 
             document.getElementById("color-box"+counter).style.backgroundColor = "green";
-        }         
-    counter++;
-    if(counter === 18){
-        for(let i = 1; i <= 19; i++){
-            document.getElementById("color-box"+i).style.backgroundColor = "transparent";
-        }
-        counter = 1;    
-    }
-}
+        }      
+       
+    counter++; 
+}      
 //==============================================================//
+
 
 function timerToStartGame(){
     if(seconds > 0){
         seconds--;
         secondTimer.innerHTML = seconds;     
     }else {
-        seconds = 31;
+        seconds = 1;
         randomColorWinner();
     }  
 }
