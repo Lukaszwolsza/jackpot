@@ -10,8 +10,10 @@ let secondTimer = document.getElementById("seconds");
 let colorBox = document.getElementById("color-box");
 
 let counter = 1;
-let seconds = 1;
+let seconds = 30;
 let timerToNewGame;
+const defaultPocketValue = 0;
+currentUserBalance = defaultPocketValue;
 
 //======================RANDOM NUMBERS===========================//
 function randomColorWinner(){
@@ -47,7 +49,7 @@ function timerToStartGame(){
         seconds--;
         secondTimer.innerHTML = seconds;     
     }else {
-        seconds = 1;
+        seconds = 31;
         randomColorWinner();
     }  
 }
@@ -62,16 +64,10 @@ function getUserInputOnBlack(){
 function getUserInputOnGreen(){
     return parseInt(betOnGreen.value);
 }
-function writeAndOuput(value){
-    currentUserBalance.textContent = value;
-}
 function makeBet(){
     const userBet = getUserInputOnRed();
-    console.log(userBet);
-   
-    currentUserBalance += userBet;
-    console.log(currentUserBalance);
     const currentValueOfPocket = currentUserBalance;
-    writeAndOuput(currentValueOfPocket);
+    currentUserBalance += userBet;
+    currentUserBalance.textContent = currentUserBalance;
 }
 btnToSend.addEventListener("click", makeBet);
