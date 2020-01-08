@@ -143,3 +143,6 @@ body{
 #random-boxes{
     text-align: center;
 }
+#currentBalance{
+    display:inline;
+}

@@ -8,12 +8,16 @@ const btnToSend = document.getElementById("apply-your-choice");
 let colorWinner = document.getElementById("color-winner");
 let secondTimer = document.getElementById("seconds");
 let colorBox = document.getElementById("color-box");
+const userLog = document.getElementById("userStatsMovement");
+
+let userPocketValue = 5000; // user's wallet
+currentUserBalance.textContent = userPocketValue;
 
 let counter = 1;
 let seconds = 30;
 let timerToNewGame;
-const defaultPocketValue = 0;
-currentUserBalance = defaultPocketValue;
+
+let arrayOfLogs = [];
 
 //======================RANDOM NUMBERS===========================//
 function randomColorWinner(){
@@ -23,7 +27,6 @@ function randomColorWinner(){
         }
         counter = 1;
     }
-    console.log(counter);
       let resultOfRandom = Math.floor((Math.random() * 100) + 1);
         if(resultOfRandom > 0 && resultOfRandom < 49){
             colorWinner.style.color = "red";
@@ -64,10 +67,18 @@ function getUserInputOnBlack(){
 function getUserInputOnGreen(){
     return parseInt(betOnGreen.value);
 }
+function outputCurrentValue(value){
+    currentUserBalance.textContent = value;
+}
+function showInLogsMove(value, color){  
+    userLog.textContent = `User XYZ set ${value} coins on color ${color} !`;
+    userLog.style.transition = "3s";
+}
 function makeBet(){
     const userBet = getUserInputOnRed();
-    const currentValueOfPocket = currentUserBalance;
-    currentUserBalance += userBet;
-    currentUserBalance.textContent = currentUserBalance;
+    const currentUserPocket = userPocketValue;
+    userPocketValue -= userBet;
+    outputCurrentValue(userPocketValue);
+    showInLogsMove(userBet, "red");
 }
 btnToSend.addEventListener("click", makeBet);
