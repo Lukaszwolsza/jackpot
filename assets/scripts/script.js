@@ -13,6 +13,7 @@ const userLog = document.getElementById("userStatsMovement");
 let userPocketValue = 5000; // user's wallet
 currentUserBalance.textContent = userPocketValue;
 
+
 let counter = 1;
 let seconds = 30;
 let timerToNewGame;
@@ -72,13 +73,29 @@ function outputCurrentValue(value){
 }
 function showInLogsMove(value, color){  
     userLog.textContent = `User XYZ set ${value} coins on color ${color} !`;
-    userLog.style.transition = "3s";
 }
 function makeBet(){
-    const userBet = getUserInputOnRed();
-    const currentUserPocket = userPocketValue;
-    userPocketValue -= userBet;
-    outputCurrentValue(userPocketValue);
-    showInLogsMove(userBet, "red");
+    if(betOnRed){
+        const userBet = getUserInputOnRed();
+        const currentUserPocket = userPocketValue;
+        userPocketValue -= userBet;
+        outputCurrentValue(userPocketValue);
+        showInLogsMove(userBet, "red");
+    } else if (betOnBlack){
+        const userBet = getUserInputOnBlack();
+        const currentUserPocket = userPocketValue;
+        userPocketValue -= userBet;
+        outputCurrentValue(userPocketValue);
+        showInLogsMove(userBet, "black");
+    } else if (betOnGreen){
+        const userBet = getUserInputOnGreen();
+        const currentUserPocket = userPocketValue;
+        userPocketValue -= userBet;
+        outputCurrentValue(userPocketValue);
+        showInLogsMove(userBet, "green");
+    }
+    
 }
+
+
 btnToSend.addEventListener("click", makeBet);
