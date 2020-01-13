@@ -19,7 +19,7 @@ let BET_ON_COLOR_BLACK;
 let BET_ON_COLOR_GREEN;
 
 let counter = 1;
-let seconds = 30;
+let seconds = 3;
 let timerToNewGame;
 let colorOfBetOutput;
 
@@ -36,14 +36,20 @@ function randomColorWinner(){
             colorWinner.style.color = "red";
             colorWinner.textContent = "red";    
             document.getElementById("color-box"+counter).style.backgroundColor = "red";
+            // userPocketValue = 2*(betOnRed.value);
+            // outputCurrentValue(userPocketValue);
         } else if (resultOfRandom > 50 && resultOfRandom <= 100){
             colorWinner.style.color = "black";
             colorWinner.textContent = "black"; 
             document.getElementById("color-box"+counter).style.backgroundColor = "black";
+            // userPocketValue = 2*(betOnBlack.value);
+            // outputCurrentValue(userPocketValue);
         } else if (resultOfRandom === 49){
             colorWinner.style.color = "green";
             colorWinner.textContent = "green"; 
             document.getElementById("color-box"+counter).style.backgroundColor = "green";
+            // userPocketValue = 2*(betOnGreen.value);
+            // outputCurrentValue(userPocketValue);
         }      
        
     counter++; 
@@ -56,7 +62,7 @@ function timerToStartGame(){
         seconds--;
         secondTimer.innerHTML = seconds;     
     }else {
-        seconds = 31;
+        seconds = 3;
         randomColorWinner();
     }  
 }
@@ -101,15 +107,16 @@ function makeBet(){
     outputCurrentValue(userPocketValue);
     showInLogsMove(userBet, "red");  
 }
-function clearLogsBox(){
-    
-}
-
-
-btnToSend.addEventListener("click", makeBet);
-btnToReset.addEventListener("click", )
-if(btnToSend){
+function clearTheInputs(){
     betOnGreen.value = "";
     betOnRed.value = "";
     betOnBlack.value = "";
 }
+function clearLogsBox(){
+    var divRemover = document.getElementById("dynamic-log-info");
+    divRemover.parentNode.removeChild(divRemover);  
+}
+
+btnToSend.addEventListener("click", makeBet);
+btnToSend.addEventListener("click", clearTheInputs);
+btnToReset.addEventListener("click", clearLogsBox);
