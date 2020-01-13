@@ -9,16 +9,19 @@ let colorWinner = document.getElementById("color-winner");
 let secondTimer = document.getElementById("seconds");
 let colorBox = document.getElementById("color-box");
 const userLog = document.getElementById("userStatsMovement");
+const btnToReset = document.getElementById("reset-logs");
 
 let userPocketValue = 5000; // user's wallet
 currentUserBalance.textContent = userPocketValue;
 
+let BET_ON_COLOR_RED;
+let BET_ON_COLOR_BLACK;
+let BET_ON_COLOR_GREEN;
 
 let counter = 1;
 let seconds = 30;
 let timerToNewGame;
-
-let arrayOfLogs = [];
+let colorOfBetOutput;
 
 //======================RANDOM NUMBERS===========================//
 function randomColorWinner(){
@@ -60,42 +63,53 @@ function timerToStartGame(){
 timerToNewGame = setInterval(timerToStartGame, 1000);
 
 function getUserInputOnRed(){
+    colorOfBetOutput = "red";
     return parseInt(betOnRed.value);
 }
 function getUserInputOnBlack(){
+    colorOfBetOutput = "black";
     return parseInt(betOnBlack.value);
 }
 function getUserInputOnGreen(){
+    colorOfBetOutput = "green";
     return parseInt(betOnGreen.value);
+}
+
+function colorOfBet(){
+    if(betOnBlack.value != 0){
+        return getUserInputOnBlack();
+    } else if (betOnRed.value != 0){
+        return getUserInputOnRed();
+    } else if (betOnGreen.value != 0){
+        return getUserInputOnGreen();
+    }
 }
 function outputCurrentValue(value){
     currentUserBalance.textContent = value;
 }
-function showInLogsMove(value, color){  
-    userLog.textContent = `User XYZ set ${value} coins on color ${color} !`;
+function showInLogsMove(value){  
+    const outputInfoAboutBet = `User XYZ set ${value} coins on color ${colorOfBetOutput} !`;
+    const addDiv = document.createElement("h5");
+    addDiv.setAttribute("id", "dynamic-log-info");
+    const addPositionInDiv = document.createTextNode(outputInfoAboutBet);
+    addDiv.appendChild(addPositionInDiv);
+    userLog.appendChild(addDiv);
 }
 function makeBet(){
-    if(betOnRed){
-        const userBet = getUserInputOnRed();
-        const currentUserPocket = userPocketValue;
-        userPocketValue -= userBet;
-        outputCurrentValue(userPocketValue);
-        showInLogsMove(userBet, "red");
-    } else if (betOnBlack){
-        const userBet = getUserInputOnBlack();
-        const currentUserPocket = userPocketValue;
-        userPocketValue -= userBet;
-        outputCurrentValue(userPocketValue);
-        showInLogsMove(userBet, "black");
-    } else if (betOnGreen){
-        const userBet = getUserInputOnGreen();
-        const currentUserPocket = userPocketValue;
-        userPocketValue -= userBet;
-        outputCurrentValue(userPocketValue);
-        showInLogsMove(userBet, "green");
-    }
+    const userBet = colorOfBet();
+    userPocketValue -= userBet;
+    outputCurrentValue(userPocketValue);
+    showInLogsMove(userBet, "red");  
+}
+function clearLogsBox(){
     
 }
 
 
 btnToSend.addEventListener("click", makeBet);
+btnToReset.addEventListener("click", )
+if(btnToSend){
+    betOnGreen.value = "";
+    betOnRed.value = "";
+    betOnBlack.value = "";
+}
