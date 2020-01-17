@@ -11,6 +11,9 @@ let colorBox = document.getElementById("color-box");
 const userLog = document.getElementById("userStatsMovement");
 const btnToReset = document.getElementById("reset-logs");
 
+
+
+
 let userPocketValue = 5000; // user's wallet
 currentUserBalance.textContent = userPocketValue;
 
@@ -88,6 +91,8 @@ function colorOfBet(){
         return getUserInputOnRed();
     } else if (betOnGreen.value != 0){
         return getUserInputOnGreen();
+    } else if(betOnBlack.value == 0 || betOnRed.value == 0 || betOnGreen.value == 0){
+        return "none";
     }
 }
 function outputCurrentValue(value){
