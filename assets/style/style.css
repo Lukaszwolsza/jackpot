@@ -181,3 +181,23 @@ a{
     text-decoration: none;
     color:#0074D9;
 }
+.site-title-addfunds{
+    text-align: center;
+    margin:3.5%;
+}
+.credt-panel-value{
+    display: inline-block;
+    margin:2% 3%;
+    font-size: 160%;
+}
+#adding-credits-panel{
+    width:70%;
+    margin:3% auto;
+    text-align: center;
+}
+.btn-click-add-money{
+    margin:2% 3%;
+    width:15%;
+    border-radius:25px;
+    display: inline-block;
+}
