@@ -99,7 +99,7 @@ function outputCurrentValue(value){
     currentUserBalance.textContent = value;
 }
 function showInLogsMove(value){  
-    const outputInfoAboutBet = `User XYZ set ${value} coins on color ${colorOfBetOutput} !`;
+    const outputInfoAboutBet = `User XYZ set ${value}$ on color ${colorOfBetOutput} !`;
     const addDiv = document.createElement("h5");
     addDiv.setAttribute("id", "dynamic-log-info");
     const addPositionInDiv = document.createTextNode(outputInfoAboutBet);
