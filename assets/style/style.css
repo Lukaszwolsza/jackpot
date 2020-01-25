@@ -200,3 +200,11 @@ a{
     height:5%;
     margin:2%;
 }
+#paying-img{
+    text-align: center;
+}
+#withdraw-credits-panel{
+    widows: 90%;
+    margin: 2% auto;
+    text-align: center;
+}
