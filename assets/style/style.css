@@ -202,9 +202,21 @@ a{
 }
 #paying-img{
     text-align: center;
+    margin-top: 6%;
 }
 #withdraw-credits-panel{
     widows: 90%;
     margin: 2% auto;
     text-align: center;
+}
+.withdraw-btn{
+    height:3%;
+    width:8%;
+    border-radius:20px;
+}
+.withdraw-inpt{
+    height:5%;
+    font-size: 130%;
+    text-align: center;
+    margin:1%;
 }

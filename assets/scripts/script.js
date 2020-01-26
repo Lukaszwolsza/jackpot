@@ -107,10 +107,15 @@ function showInLogsMove(value){
     userLog.appendChild(addDiv);
 }
 function makeBet(){
-    const userBet = colorOfBet();
-    userPocketValue -= userBet;
-    outputCurrentValue(userPocketValue);
-    showInLogsMove(userBet, "red");  
+    if(userPocketValue > 0){
+        const userBet = colorOfBet();
+        userPocketValue -= userBet;
+        outputCurrentValue(userPocketValue);
+        showInLogsMove(userBet, "red");  
+    } else {
+        alert("You don't have enought coins to bet ! ");
+    }
+    
 }
 function clearTheInputs(){
     betOnGreen.value = "";
