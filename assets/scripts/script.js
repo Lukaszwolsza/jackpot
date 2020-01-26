@@ -39,8 +39,7 @@ function randomColorWinner(){
             colorWinner.style.color = "red";
             colorWinner.textContent = "red";    
             document.getElementById("color-box"+counter).style.backgroundColor = "red";
-            // userPocketValue = 2*(betOnRed.value);
-            // outputCurrentValue(userPocketValue);
+
         } else if (resultOfRandom > 50 && resultOfRandom <= 100){
             colorWinner.style.color = "black";
             colorWinner.textContent = "black"; 
